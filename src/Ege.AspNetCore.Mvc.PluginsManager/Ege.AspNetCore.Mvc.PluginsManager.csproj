@@ -2,34 +2,30 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <Version>1.0.0</Version>
     <Authors>Eyüp Gevenim</Authors>
-    <Product>AspNetCore Mvc Plugins Manager</Product>
+    <Product>Asp.Net Core Mvc Plugins Manager</Product>
+    <Title>Asp.Net Core Mvc Plugins Manager</Title>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/eyupgevenim</PackageProjectUrl>
-    <PackageTags>AspNetCoreMvcPlugins, AspNetCoreMvcPluginsManager, MvcPluginsManager, PluginsManager, aspnetcore, aspnetcoremvc</PackageTags>
+    <PackageTags>AspNetCoreMvcPlugins, AspNetCoreMvcPluginsManager, MvcPluginsManager, PluginsManager, Plugins, aspnetcore, aspnetcoremvc</PackageTags>
     <Description>That is an open-source plugin(modular) and multi-tenant application framework built with ASP.NET Core, 
 and a content management system (CMS) built on top of that application framework. Include a main project without referencing it using mvc structure in .dll projects as a plugin.</Description>
-    <PackageReleaseNotes>Plungin project should be Sdk="Microsoft.NET.Sdk.Razor" or  Sdk="Microsoft.NET.Sdk.Web"</PackageReleaseNotes>
-    <PackageLicenseFile>README.md</PackageLicenseFile>
+    <PackageReleaseNotes>Plungin project should be Sdk="Microsoft.NET.Sdk.Razor" or Sdk="Microsoft.NET.Sdk.Web"</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/eyupgevenim/AspNetCoreMvcPluginsManager</RepositoryUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright © Eyüp Gevenim</Copyright>
-    <PackageIconUrl>..\..\icon.png</PackageIconUrl>
+    <PackageIconUrl>icon.ico</PackageIconUrl>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
     <RepositoryType>git</RepositoryType>
+    <NeutralLanguage>es-US</NeutralLanguage>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="3.1.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\..\README.md">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
   </ItemGroup>
 
 </Project>
