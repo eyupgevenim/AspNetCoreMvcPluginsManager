@@ -3,7 +3,7 @@
 
 
 [![build status](https://img.shields.io/badge/buid-passing-green)](https://github.com/eyupgevenim/AspNetCoreMvcPluginsManager/tree/master/src/Ege.AspNetCore.Mvc.PluginsManager)
-[![latest version](https://img.shields.io/badge/nuget-v1.0.0-%230366d6)](https://www.nuget.org/packages/Ege.AspNetCore.Mvc.PluginsManager)
+[![latest version](https://img.shields.io/nuget/v/Ege.AspNetCore.Mvc.PluginsManager)](https://www.nuget.org/packages/Ege.AspNetCore.Mvc.PluginsManager)
 [![latest version](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 That is an open-source plugin(modular) and multi-tenant application framework built with ASP.NET Core, 
