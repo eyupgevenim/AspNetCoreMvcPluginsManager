@@ -6,7 +6,6 @@ using System.Collections.Generic;
 
 namespace Plugin.Widget.Controllers
 {
-    [Area("Plugin")]
     public class WidgetsController : Controller
     {
         private readonly List<WidgetModel> Widgets = new List<WidgetModel>
@@ -20,10 +19,13 @@ namespace Plugin.Widget.Controllers
         {
             var model = Widgets.FirstOrDefault(w => w.Name.Equals(id, StringComparison.OrdinalIgnoreCase));
             if (model == null)
-                return Content($"not fuand {id}");
+                return Content($@"not fuand {id}
+                                <br/>    
+                                <p>
+                                    <a href=""/Home/Index""> Home Page </a>
+                                </p>", "text/html");
 
             return View(model);
-            //return View("~/Views/Widgets/Info.cshtml", model);
         }
     }
 }

@@ -2,7 +2,32 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <div class="text-center">
+
+        <h6>Plugin.Tax Plugin</h6>
+        <p>
+            <a asp-controller="Tax" asp-action="Index" asp-route-id="x">/Tax/Index/x</a>
+        </p>
+        <p>
+            <a asp-controller="Tax" asp-action="Index" asp-route-id="w">/Tax/Index/w</a>
+        </p>
+
+        <h6>Plugin.Payment Plugin</h6>
+        <p>
+            <a asp-area="Plugin" asp-controller="Checkout" asp-action="Index">/Plugin/Checkout/Index</a>
+        </p>
+
+
+        <h6>Plugin.Widget Plugin</h6>
+        <p>
+            <a asp-controller="Widgets" asp-action="Info" asp-route-id="b">/Widgets/Info/b</a>
+        </p>
+        <p>
+            <a asp-controller="Widgets" asp-action="Info" asp-route-id="e">/Widgets/Info/e</a>
+        </p>
+
+        <h6>Plugin.Discount Plugin</h6>
+        <p>
+            <a asp-controller="Discounts" asp-action="Index">/Discounts/Index</a>
+        </p>
+    </div>

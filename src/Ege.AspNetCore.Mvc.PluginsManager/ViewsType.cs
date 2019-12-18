@@ -1,8 +1,11 @@
-﻿namespace Ege.AspNetCore.Mvc.PluginsManager
+﻿using System;
+
+namespace Ege.AspNetCore.Mvc.PluginsManager
 {
     /// <summary>
     /// Plugin views access types
     /// </summary>
+    [Obsolete("ViewsType will be removed in the next version.")]
     public enum ViewsType
     {
         /// <summary>

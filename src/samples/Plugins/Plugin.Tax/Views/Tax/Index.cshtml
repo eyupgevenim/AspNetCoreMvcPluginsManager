@@ -1,8 +1,14 @@
-﻿@model Plugin.Tax.Models.TaxModel
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Plugin.Tax.Models.TaxModel
 
-    <div>
-        <p> Tax Name: @Model.Name</p>
-        <p> Tax Rate: @Model.Rate</p>
-    </div>
+<div>
+    <p> Tax Name: @Model.Name</p>
+    <p> Tax Rate: @Model.Rate</p>
+</div>
+
+
+<p>
+    <a asp-controller="Home" asp-action="Index">Home Page</a>
+</p>
 
 

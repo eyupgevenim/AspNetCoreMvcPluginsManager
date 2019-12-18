@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AddRazorSupportForMvc>false</AddRazorSupportForMvc>
+    <RazorCompileOnBuild>false</RazorCompileOnBuild>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="PluginInfo.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="PluginInfo.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Ege.AspNetCore.Mvc.PluginsManager\Ege.AspNetCore.Mvc.PluginsManager.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\Applications\Application.WebMvc\Plugins\Plugin.Discount</OutputPath>
+    <OutDir>$(OutputPath)</OutDir>
+  </PropertyGroup>
+
+</Project>

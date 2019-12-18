@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Discount", "src\samples\Plugins\Plugin.Discount\Plugin.Discount.csproj", "{A0BEDCD3-8AE2-4697-BDD6-55F8CF7D6138}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{BBF6507D-505D-4F2E-A1E8-78C125ED6C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBF6507D-505D-4F2E-A1E8-78C125ED6C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBF6507D-505D-4F2E-A1E8-78C125ED6C91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0BEDCD3-8AE2-4697-BDD6-55F8CF7D6138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0BEDCD3-8AE2-4697-BDD6-55F8CF7D6138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0BEDCD3-8AE2-4697-BDD6-55F8CF7D6138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0BEDCD3-8AE2-4697-BDD6-55F8CF7D6138}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{97D0AA1D-A49C-451A-A04D-6B2632E28187} = {9D5466A2-C89F-4F60-9BBD-13922D7077DA}
 		{5117CBD7-B059-40D1-AEC6-186C74152429} = {9D5466A2-C89F-4F60-9BBD-13922D7077DA}
 		{BBF6507D-505D-4F2E-A1E8-78C125ED6C91} = {9D5466A2-C89F-4F60-9BBD-13922D7077DA}
+		{A0BEDCD3-8AE2-4697-BDD6-55F8CF7D6138} = {9D5466A2-C89F-4F60-9BBD-13922D7077DA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4439E97A-D544-4F8C-8504-9492EEF0E1B3}

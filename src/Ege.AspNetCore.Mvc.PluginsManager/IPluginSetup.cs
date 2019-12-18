@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace Ege.AspNetCore.Mvc.PluginsManager
 {
@@ -23,10 +24,12 @@ namespace Ege.AspNetCore.Mvc.PluginsManager
         /// <summary>
         /// To access views internal or external plugin or not view
         /// </summary>
+        [Obsolete("ViewsType will be removed in the next version.")]
         ViewsType ViewsType => ViewsType.Internal;
         /// <summary>
         /// To use internal controllers or not controller
         /// </summary>
+        [Obsolete("ControllerType will be removed in the next version.")]
         ControllerType ControllerType => ControllerType.Internal;
         /// <summary>
         /// This method gets called by the runtime. Use this method to add services to the container for plugin

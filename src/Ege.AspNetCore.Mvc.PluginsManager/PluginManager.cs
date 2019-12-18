@@ -106,7 +106,7 @@ namespace Ege.AspNetCore.Mvc.PluginsManager
                         if (!File.Exists(viewAssembypath))
                             throw new FileNotFoundException($"{nameof(LoadViews)}: no Plugin View Assembly found: {viewAssembypath}");
 
-                        services.AddMvc().ConfigureApplicationPartManager(apm =>
+                        services.AddMvcCore().ConfigureApplicationPartManager(apm =>
                         {
                             var compiledRazorAssemblyApplicationParts = new CompiledRazorAssemblyApplicationPartFactory().GetApplicationParts(AssemblyLoadContext.Default.LoadFromAssemblyPath(viewAssembypath));
                             foreach (var craapf in compiledRazorAssemblyApplicationParts)
@@ -140,7 +140,7 @@ namespace Ege.AspNetCore.Mvc.PluginsManager
                 case ControllerType.Internal:
                     {
                         services
-                            .AddMvc()
+                            .AddMvcCore()
                             .ConfigureApplicationPartManager(apm => apm
                                 .ApplicationParts.Add(new AssemblyPart(AssemblyLoadContext.Default.LoadFromAssemblyPath(plugin.Key)))
                             ); 

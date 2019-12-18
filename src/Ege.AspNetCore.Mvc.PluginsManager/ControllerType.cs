@@ -1,8 +1,11 @@
-﻿namespace Ege.AspNetCore.Mvc.PluginsManager
+﻿using System;
+
+namespace Ege.AspNetCore.Mvc.PluginsManager
 {
     /// <summary>
     /// Plugin controller types
     /// </summary>
+    [Obsolete("ControllerType will be removed in the next version.")]
     public enum ControllerType
     {
         /// <summary>
