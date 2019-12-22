@@ -8,9 +8,6 @@ namespace Plugin.Payment
     internal class PluginSetup : IPluginSetup
     {
         public int Order => 20;
-        //public ViewsType ViewsType => ViewsType.Internal;
-        //public ControllerType ControllerType => Controller.Internal;
-
         public void ConfigureServices(IServiceCollection services)
         {
             //TODO:

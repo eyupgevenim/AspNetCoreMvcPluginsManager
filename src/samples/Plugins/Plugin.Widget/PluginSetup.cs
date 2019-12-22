@@ -8,9 +8,6 @@ namespace Plugin.Widget
     internal class PluginSetup :IPluginSetup
     {
         public int Order => 100;
-        public ViewsType ViewsType => ViewsType.Internal;
-        public ControllerType ControllerType => ControllerType.Internal;
-
         public void ConfigureServices(IServiceCollection services)
         {
             //TODO:

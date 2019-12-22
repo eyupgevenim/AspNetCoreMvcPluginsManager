@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
-using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using System;
@@ -98,33 +96,15 @@ namespace Ege.AspNetCore.Mvc.PluginsManager
         /// <param name="plugin">plugin object key:plugin full path, value:plugin Setup.cs</param>
         private static void LoadViews(this IServiceCollection services, KeyValuePair<string, IPluginSetup> plugin)
         {
-            switch (plugin.Value.ViewsType)
+            string viewAssembypath = plugin.Key.Replace(".dll", ".Views.dll");
+            if (File.Exists(viewAssembypath))
             {
-                case ViewsType.Internal:
-                    {
-                        string viewAssembypath = plugin.Key.Replace(".dll", ".Views.dll");
-                        if (!File.Exists(viewAssembypath))
-                            throw new FileNotFoundException($"{nameof(LoadViews)}: no Plugin View Assembly found: {viewAssembypath}");
-
-                        services.AddMvcCore().ConfigureApplicationPartManager(apm =>
-                        {
-                            var compiledRazorAssemblyApplicationParts = new CompiledRazorAssemblyApplicationPartFactory().GetApplicationParts(AssemblyLoadContext.Default.LoadFromAssemblyPath(viewAssembypath));
-                            foreach (var craapf in compiledRazorAssemblyApplicationParts)
-                                apm.ApplicationParts.Add(craapf);
-                        });
-                    }
-                    break;
-                case ViewsType.External:
-                    {
-                        var embeddedFileProvider = new EmbeddedFileProvider(AssemblyLoadContext.Default.LoadFromAssemblyPath(plugin.Key));
-                        services.Configure<RazorViewEngineOptions>(options =>
-                        {
-                            options.FileProviders.Add(embeddedFileProvider);
-                        }); 
-                    }
-                    break;
-                default:
-                    break;
+                services.AddMvcCore().ConfigureApplicationPartManager(apm =>
+                {
+                    var compiledRazorAssemblyApplicationParts = new CompiledRazorAssemblyApplicationPartFactory().GetApplicationParts(AssemblyLoadContext.Default.LoadFromAssemblyPath(viewAssembypath));
+                    foreach (var craapf in compiledRazorAssemblyApplicationParts)
+                        apm.ApplicationParts.Add(craapf);
+                });
             }
         }
         /// <summary>
@@ -135,20 +115,11 @@ namespace Ege.AspNetCore.Mvc.PluginsManager
         /// <param name="plugin">plugin object key:plugin full path, value:plugin Setup.cs</param>
         private static void LoadControllers(this IServiceCollection services, KeyValuePair<string, IPluginSetup> plugin)
         {
-            switch (plugin.Value.ControllerType)
-            {
-                case ControllerType.Internal:
-                    {
-                        services
-                            .AddMvcCore()
-                            .ConfigureApplicationPartManager(apm => apm
-                                .ApplicationParts.Add(new AssemblyPart(AssemblyLoadContext.Default.LoadFromAssemblyPath(plugin.Key)))
-                            ); 
-                    }
-                    break;
-                default:
-                    break;
-            }
+            services
+                .AddMvcCore()
+                .ConfigureApplicationPartManager(apm => apm
+                    .ApplicationParts.Add(new AssemblyPart(AssemblyLoadContext.Default.LoadFromAssemblyPath(plugin.Key)))
+                );
         }
         /// <summary>
         /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline for plugin

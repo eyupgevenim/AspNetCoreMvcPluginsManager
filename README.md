@@ -17,7 +17,7 @@ dotnet add package Ege.AspNetCore.Mvc.PluginsManager
 ```
 or
 ```sh
-PM>Install-Package Ege.AspNetCore.Mvc.PluginsManager -Version 1.0.0
+PM>Install-Package Ege.AspNetCore.Mvc.PluginsManager
 ```
 
 ### Usage
@@ -60,11 +60,7 @@ using Ege.AspNetCore.Mvc.PluginsManager;
     {
         //for sorting between plugins middleware
         public int Order => 10;
-        //Internal: only this dll access, External: main project access views, None: not exists view
-        public ViewsType ViewsType => ViewsType.Internal;
-        //Internal:exists view, None:not exists view
-        public ControllerType ControllerType => ControllerType.Internal;
-        
+
         //your plugin ConfigureServices method
         public void ConfigureServices(IServiceCollection services)
         {
